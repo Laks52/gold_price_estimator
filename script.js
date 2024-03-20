@@ -1,6 +1,6 @@
 document.getElementById('calculateBtn').addEventListener('click', function() {
   var gramsInput = parseFloat(document.getElementById('gramsInput').value);
-  var caratValue = parseFloat(document.querySelector('input[name="carat"]:checked').value);
+  var caratValue = parseFloat(document.querySelector('input[name="carat"]:checked')?.value);
   var pricePerGram = parseFloat(document.getElementById('price').value);
   var wastagePercent = parseFloat(document.getElementById('percent').value);
   var gstPercent = parseFloat(document.getElementById('gst').value);
@@ -20,6 +20,6 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
           "GST Amount: " + GSTamount.toFixed(2) + " INR<br>" +
           "Total Price After Tax and Wastage: " + totalAmount.toFixed(2) + " INR<br>";
   } else {
-      document.getElementById('result').innerText = "Please enter valid weight, carat, price, wastage percent, and GST percent.";
+      document.getElementById('result').innerText = "Please enter all the fields.";
   }
 });
